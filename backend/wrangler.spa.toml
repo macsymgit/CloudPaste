@@ -15,7 +15,9 @@ local_protocol = "http"
 # 环境变量
 [vars]
 # 用于加密敏感配置的密钥
-ENCRYPTION_SECRET = "default-encryption-key"
+# ENCRYPTION_SECRET: set as a Worker secret (npx wrangler secret put ENCRYPTION_SECRET)
+# or as a GitHub Secret. Kept out of [vars] so a plaintext var cannot
+# clobber the real Worker secret on deploy.
 # 管理员Token过期天数，默认7天
 ADMIN_TOKEN_EXPIRY_DAYS = "7"
 #
